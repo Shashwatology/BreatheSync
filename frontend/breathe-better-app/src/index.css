@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 220 30% 7%;
+    --foreground: 210 40% 95%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 14%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 16%;
+    --input: 220 15% 16%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 30% 7%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 14%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 220 15% 16%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Custom tokens */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 100%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 60%), hsl(199, 89%, 48%));
+    --gradient-hero: linear-gradient(135deg, hsl(217, 91%, 60%), hsl(199, 89%, 48%));
+    --gradient-card: linear-gradient(180deg, hsla(0, 0%, 100%, 0.06), hsla(0, 0%, 100%, 0.02));
+
+    --shadow-card: 0 2px 8px 0 rgb(0 0 0 / 0.3);
+    --shadow-elevated: 0 12px 32px -8px rgb(0 0 0 / 0.4);
+    --shadow-glow: 0 0 24px hsl(217 91% 60% / 0.25);
+
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  /* Light mode override (optional) */
+  .light {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Glassmorphism card */
+  .glass-card {
+    @apply rounded-2xl p-6 border border-white/10 transition-all duration-300;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Legacy stat-card updated to glass */
+  .stat-card {
+    @apply rounded-2xl p-6 border border-white/10 transition-all duration-300;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .stat-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .aqi-safe {
+    @apply bg-success/15 text-success border-success/25;
+  }
+
+  .aqi-moderate {
+    @apply bg-accent/15 text-accent border-accent/25;
+  }
+
+  .aqi-danger {
+    @apply bg-destructive/15 text-destructive border-destructive/25;
+  }
+
+  .bottom-nav-item {
+    @apply flex flex-col items-center gap-1 text-muted-foreground transition-all duration-200;
+  }
+
+  .bottom-nav-item.active {
+    @apply text-primary;
+  }
+
+  .breathing-circle {
+    @apply rounded-full border-4 border-primary transition-all;
+  }
+
+  .pulse-ring {
+    animation: pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Micro-interaction: hover lift */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  /* Button press */
+  .press-effect {
+    @apply transition-transform duration-150;
+  }
+  .press-effect:active {
+    transform: scale(0.97);
+  }
+
+  /* Loading shimmer */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03) 25%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.03) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  /* Glow button */
+  .glow-button {
+    @apply relative;
+    transition: box-shadow 0.3s ease;
+  }
+  .glow-button:hover {
+    box-shadow: 0 0 30px hsl(217 91% 60% / 0.4), 0 0 60px hsl(199 89% 48% / 0.15);
+  }
+
+  /* Glass input */
+  .glass-input {
+    @apply rounded-xl border border-white/10 px-4 py-3 text-sm transition-all duration-200;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
+  .glass-input:focus {
+    @apply outline-none;
+    border-color: hsl(217 91% 60% / 0.5);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 16px hsl(217 91% 60% / 0.15);
+  }
+
+  /* Floating particles */
+  .particle {
+    @apply absolute rounded-full;
+    animation: float linear infinite;
+  }
+
+  /* Gradient mesh */
+  .gradient-mesh {
+    background: 
+      radial-gradient(ellipse at 20% 50%, hsl(217 91% 60% / 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(199 89% 48% / 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 80%, hsl(142 71% 45% / 0.08) 0%, transparent 50%);
+  }
+}
+
+@keyframes pulseRing {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.15); opacity: 0.2; }
+}
+
+@keyframes breatheIn {
+  0% { transform: scale(0.6); }
+  100% { transform: scale(1); }
+}
+
+@keyframes breatheOut {
+  0% { transform: scale(1); }
+  100% { transform: scale(0.6); }
+}
+
+@keyframes waveform {
+  0%, 100% { height: 8px; }
+  50% { height: 32px; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}

@@ -1,0 +1,24 @@
+# General
+.env
+.env.local
+.DS_Store
+*.log
+
+# Backend (Python)
+backend/**/__pycache__/
+backend/**/.pytest_cache/
+backend/**/.venv/
+backend/**/venv/
+backend/**/*.pyc
+backend/**/.env
+
+# Frontend (Node.js / Vite)
+frontend/breathe-better-app/node_modules/
+frontend/breathe-better-app/dist/
+frontend/breathe-better-app/.lovable/
+frontend/breathe-better-app/.env
+frontend/breathe-better-app/.env.local
+
+# Build artifacts
+*.pptx
+*.pdf
