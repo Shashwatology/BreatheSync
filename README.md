@@ -18,80 +18,38 @@
 
 <table>
   <tr>
-    <td align="center"><b>🏠 Home / Landing</b></td>
     <td align="center"><b>📊 Health Dashboard</b></td>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/Shashwatology/BreatheSync/main/docs/screenshot_home.png" alt="Home Page" width="100%"/></td>
-    <td><img src="https://raw.githubusercontent.com/Shashwatology/BreatheSync/main/docs/screenshot_dashboard.png" alt="Dashboard" width="100%"/></td>
-  </tr>
-  <tr>
     <td align="center"><b>🎙️ AI Voice Check</b></td>
-    <td align="center"><b>🗺️ Environmental AQI Map</b></td>
   </tr>
   <tr>
+    <td><img src="https://raw.githubusercontent.com/Shashwatology/BreatheSync/main/docs/screenshot_dashboard.png" alt="Dashboard" width="100%"/></td>
     <td><img src="https://raw.githubusercontent.com/Shashwatology/BreatheSync/main/docs/screenshot_voice.png" alt="Voice Check" width="100%"/></td>
-    <td><img src="https://raw.githubusercontent.com/Shashwatology/BreatheSync/main/docs/screenshot_environment.png" alt="Environment Map" width="100%"/></td>
   </tr>
   <tr>
+    <td align="center"><b>🗺️ Environmental AQI Map</b></td>
     <td align="center"><b>🏋️ Lung Gym</b></td>
-    <td align="center"><b>🌙 Sleep Mode (Acoustic Radar)</b></td>
   </tr>
   <tr>
+    <td><img src="https://raw.githubusercontent.com/Shashwatology/BreatheSync/main/docs/screenshot_environment.png" alt="Environment Map" width="100%"/></td>
     <td><img src="https://raw.githubusercontent.com/Shashwatology/BreatheSync/main/docs/screenshot_lung_gym.png" alt="Lung Gym" width="100%"/></td>
-    <td><img src="https://raw.githubusercontent.com/Shashwatology/BreatheSync/main/docs/screenshot_sleep.png" alt="Sleep Mode" width="100%"/></td>
-  </tr>
-  <tr>
-    <td align="center"><b>🥗 Gut Health Intelligence</b></td>
-    <td align="center"><b>🔐 Secure Login</b></td>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/Shashwatology/BreatheSync/main/docs/screenshot_gut_health.png" alt="Gut Health" width="100%"/></td>
-    <td><img src="https://raw.githubusercontent.com/Shashwatology/BreatheSync/main/docs/screenshot_login.png" alt="Login" width="100%"/></td>
   </tr>
 </table>
 
 ---
 
-## ✨ Features
+## ✨ Core Features
 
 ### 🎙️ AI-Powered Vocal Biomarker Analysis
-Record a sustained vowel sound ("Ahhh") for 6 seconds. BreatheSync's ML engine extracts acoustic features using **Librosa** (MFCC, Jitter, Shimmer, ZCR, HNR) and runs them through a trained **Scikit-learn** classifier to produce a **Lung Voice Score** out of 100 — a non-invasive, clinically-inspired respiratory health metric.
+Record a 6-second vowel sound to receive a **Lung Voice Score** — a non-invasive respiratory health metric powered by machine learning (Librosa + Scikit-learn).
 
 ### 📊 Predictive Health Dashboard
-A comprehensive at-a-glance view of your respiratory health ecosystem:
-- **🫁 Live Lung Voice Score** with trend tracking (↑ +5 from yesterday)
-- **⚠️ Digital Twin Forecast** — AI risk prediction engine (e.g., "88% Attack Risk")
-- **🌬️ Live Sensor Cards** — Breathing sessions, medication adherence, risk level, gut health
-- **Weekly consistency tracker** and quick-action shortcuts
+A real-time overview of your respiratory health, featuring an AI-driven **Digital Twin Forecast** that predicts attack risks based on your history and environment.
 
-### 🗺️ Hyper-Local Environmental Intelligence (Trigger Map)
-- Real-time **AQI (Air Quality Index)** data from the AQICN global network
-- **Interactive Leaflet.js map** with color-coded risk zones (Good / Moderate / Unhealthy)
-- **AI Health Prediction** per location — auto-correlated with your respiratory history
-- Drill-down city list with per-location AQI badges
+### 🗺️ Hyper-Local Environmental Intelligence
+Interactive maps providing real-time **AQI (Air Quality Index)** data and personalized health predictions correlated with your local triggers.
 
 ### 🏋️ Lung Gym — Therapeutic Breathing Trainer
-- **Guided Breathing**: 4-7-8 technique for deep relaxation (timed, animated)
-- **Dragon Breather**: Gamified breathing exercise using your microphone — blow to fly!
-- **Streak tracking**, badge system, and session history with scores
-
-### 🌙 Sleep Mode — Acoustic Radar
-- On-device **Edge AI** monitoring for nocturnal coughing and wheezing
-- Completely **private** — no audio is ever recorded or uploaded, only event frequency metadata
-- Predicts next-day asthma risk from overnight acoustic patterns
-
-### 🥗 Gut Health Intelligence
-- **Gut-Lung Axis** — food recommendations to reduce systemic inflammation
-- Anti-inflammatory food list (Turmeric, Ginger Tea, Flaxseeds)
-- Probiotics guide (Yogurt / Dahi, Kimchi)
-- Foods-to-avoid warnings (Dairy excess, Fried foods)
-- **Food Log** and **Gut-Lung Correlation** tabs
-
-### 🔐 Secure Auth & User Management
-- **Supabase Auth** with email/password and Google OAuth
-- Demo Mode for unauthenticated exploration
-- Role-based access control
+Guided breathing exercises and the microphone-controlled **Dragon Breather** game to help improve lung capacity and adherence to breathing techniques.
 
 ---
 
